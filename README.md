@@ -14,3 +14,6 @@ $ rails db: migrate
  # app/contrller and app/view 
  generated static pages
  $ rails generated controller StatcPages home help
+ #home and help - Action in static pages controller 
+ config /routes.rb
+ get 'static -pages/home' --> url/static-pages/home
