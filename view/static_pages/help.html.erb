@@ -1,6 +1,7 @@
+<%provide (:title,"Help")%> # provide to set a different title on each page
 <!DOCTYPE html>
 <html >
-<head><title>help | this my web app</title>
+<head><title> <%=yield(:title)%> | this my web app</title>
 </head>
 <body><h1>sample web application</h1>
 <p> this is home page fot the sample application</p>
