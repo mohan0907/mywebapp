@@ -3,7 +3,8 @@ class CreatePublication <ActiveRecord :: Migration[6.0]
               create_table :publication do |t|
                     t.string :title 
                     t.boolean single_issue
-              end      
+              end
+              add_index :publication, publication_type_id
          end
          
 end         
