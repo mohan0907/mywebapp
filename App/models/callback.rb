@@ -20,5 +20,31 @@ end
 @employee = Employee.last
 @employee.touch # triggers @employee.company.touch
 
+
+#Ralational callbacks -- callbacks work through model relationship and can even be defined by them User has_many articles
+class User < ApplicationRecord 
+   has_many :articles , dependent: :destroy 
+end
+class Article < ApplicationRecord
+  after_destroy :log_destroy_action
+  def log_destroy_action 
+    puts 'Article destroyed'
+  end
+end  
+user=User.first
+user.articles.creates!
+user.destroy
+#o/p Artical destroyed
+
+
+
+
+
+
+
+
+
+
+
   
   
