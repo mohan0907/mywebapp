@@ -1,7 +1,7 @@
 # create model
 class Physician < ApplicationRecord
-  has_many :appointement
-  has_many :patient , through : : appointement
+  has_many :appointements
+  has_many :patients , through : : appointement
 end
 
 class Appointement <ApplicationRecoed
@@ -10,8 +10,8 @@ class Appointement <ApplicationRecoed
 end
 
 class Patient < ApplicationsRecord
-  has_many :appointement
-  has_many :physician , through : :appointement
+  has_many :appointements
+  has_many :physicians , through : :appointement
 end
 
 #create migration
