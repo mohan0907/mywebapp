@@ -10,3 +10,11 @@ class Book < ApplicationRecord
   scope :out_of_print_and_expensive, -> { out_of_print.where('price > 500') }
   scope :costs_more_than, ->(amount) { where('price > ?', amount) }
 end
+
+
+big_orders = Order.select("created_at, sum(total) as total_price")
+                  .group("created_at")
+                  .having("sum(total) > ?", 200)
+
+big_orders[0].total_price
+# Returns the total price for the first Order object
